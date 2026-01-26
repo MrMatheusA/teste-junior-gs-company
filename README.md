@@ -55,7 +55,7 @@ Se quiser se destacar, implemente funcionalidades extras usando as rotas opciona
 ## 🛠 Tecnologias Recomendadas
 
 O projeto já está configurado com:
-*   [Next.js 14+](https://nextjs.org/) (App Router)
+*   [Next.js 16+](https://nextjs.org/) (App Router)
 *   [TypeScript](https://www.typescriptlang.org/)
 *   [Tailwind CSS](https://tailwindcss.com/)
 *   [ESLint](https://eslint.org/)
