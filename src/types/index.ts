@@ -5,23 +5,29 @@ export interface Message {
   id: string;
   contactId: string;
   content: string;
-  timestamp: string; // ISO string
-  direction: MessageDirection;
-  status: MessageStatus;
+  direction: "inbound" | "outbound";
+  timestamp: string;
+  status?: "sent" | "delivered" | "read" | "failed";
+  _optimistic?: boolean;
+  _failed?: boolean;
 }
 
-export interface Contact {
+export type Contact = {
   id: string;
   name: string;
+  phoneNumber?: string;
   email?: string;
-  phoneNumber: string;
-  profilePicture: string;
-  status: 'active' | 'inactive' | 'blocked';
-  lastMessage?: {
-    content: string;
-    timestamp: string;
-  };
-  tags: string[]; // e.g., "Lead", "Customer", "Support"
+  profilePicture?: string;
+  status: 'active' | 'inactive';
+ lastMessage?: {
+  content: string;
+  timestamp: string;
+  direction?: 'inbound' | 'outbound';
+};
+  tags?: string[];
+  queueId?: string;
+  assignedUserId?: string;
+  unreadMessages?: number;
 }
 
 export interface MessageTemplate {
